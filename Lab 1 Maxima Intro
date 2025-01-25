@@ -1,0 +1,2 @@
+f: (h and not c) or (p and not C);
+f, h=false, p=false, c=false;
