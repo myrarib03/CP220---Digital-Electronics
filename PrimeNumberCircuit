@@ -1,0 +1,63 @@
+/* Circuit simulation for checking primality using 4 binary inputs */
+
+/* Function definitions for AND, OR, and NOT gates */
+and_gate(a, b) := if a = 1 and b = 1 then 1 else 0;
+or_gate(a, b) := if a = 1 or b = 1 then 1 else 0;
+not_gate(a) := if a = 1 then 0 else 1;
+
+/* Hardcoded primality logic */
+prime := (not(a3) and not(a2) and not(a1) and not(a0)) /* 0 is not prime */
+         or (not(a3) and not(a2) and a1 and a0) /* 3 is prime */
+         or (not(a3) and a2 and not(a1) and a0) /* 5 is prime */
+         or (not(a3) and a2 and a1 and a0) /* 7 is prime */
+         or (a3 and a2 and not(a1) and a0); /* 13 is prime */
+
+/* Test cases */
+/* Replace values of a3, a2, a1, a0 with binary inputs */
+a3 : false; a2 : false; a1 : false; a0 : false; /* Binary for 0 */
+print("0: ", prime);
+
+a3 : false; a2 : false; a1 : false; a0 : true; /* Binary for 1 */
+print("1: ", prime);
+
+a3 : false; a2 : false; a1 : true; a0 : false; /* Binary for 2 */
+print("2: ", prime);
+
+a3 : false; a2 : false; a1 : true; a0 : true; /* Binary for 3 */
+print("3: ", prime);
+
+a3 : false; a2 : true; a1 : false; a0 : false; /* Binary for 4 */
+print("4: ", prime);
+
+a3 : false; a2 : true; a1 : false; a0 : true; /* Binary for 5 */
+print("5: ", prime);
+
+a3 : false; a2 : true; a1 : true; a0 : false; /* Binary for 6 */
+print("6: ", prime);
+
+a3 : false; a2 : true; a1 : true; a0 : true; /* Binary for 7 */
+print("7: ", prime);
+
+a3 : true; a2 : false; a1 : false; a0 : false; /* Binary for 8 */
+print("8: ", prime);
+
+a3 : true; a2 : false; a1 : false; a0 : true; /* Binary for 9 */
+print("9: ", prime);
+
+a3 : true; a2 : false; a1 : true; a0 : false; /* Binary for 10 */
+print("10: ", prime);
+
+a3 : true; a2 : false; a1 : true; a0 : true; /* Binary for 11 */
+print("11: ", prime);
+
+a3 : true; a2 : true; a1 : false; a0 : false; /* Binary for 12 */
+print("12: ", prime);
+
+a3 : true; a2 : true; a1 : false; a0 : true; /* Binary for 13 */
+print("13: ", prime);
+
+a3 : true; a2 : true; a1 : true; a0 : false; /* Binary for 14 */
+print("14: ", prime);
+
+a3 : true; a2 : true; a1 : true; a0 : true; /* Binary for 15 */
+print("15: ", prime);
