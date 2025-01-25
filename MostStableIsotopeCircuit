@@ -1,0 +1,71 @@
+/* Circuit simulation for determining the most stable isotope using 4 binary inputs */
+
+/* Function definitions for AND, OR, and NOT gates */
+and_gate(a, b) := if a = 1 and b = 1 then 1 else 0;
+or_gate(a, b) := if a = 1 or b = 1 then 1 else 0;
+not_gate(a) := if a = 1 then 0 else 1;
+
+/* Hardcoded logic for the most stable isotope of elements 1 to 15 */
+/* Output 1 if the binary inputs match the most stable isotope, 0 otherwise */
+stable_isotope := (not(a3) and not(a2) and not(a1) and a0) /* Element 1 (Hydrogen): 1H */
+                   or (not(a3) and not(a2) and a1 and a0) /* Element 2 (Helium): 4He */
+                   or (not(a3) and a2 and not(a1) and not(a0)) /* Element 3 (Lithium): 7Li */
+                   or (not(a3) and a2 and not(a1) and a0) /* Element 4 (Beryllium): 9Be */
+                   or (not(a3) and a2 and a1 and a0) /* Element 5 (Boron): 11B */
+                   or (a3 and not(a2) and not(a1) and not(a0)) /* Element 6 (Carbon): 12C */
+                   or (a3 and not(a2) and not(a1) and a0) /* Element 7 (Nitrogen): 14N */
+                   or (a3 and not(a2) and a1 and not(a0)) /* Element 8 (Oxygen): 16O */
+                   or (a3 and not(a2) and a1 and a0) /* Element 9 (Fluorine): 19F */
+                   or (a3 and a2 and not(a1) and not(a0)) /* Element 10 (Neon): 20Ne */
+                   or (a3 and a2 and not(a1) and a0) /* Element 11 (Sodium): 23Na */
+                   or (a3 and a2 and a1 and not(a0)) /* Element 12 (Magnesium): 24Mg */
+                   or (a3 and a2 and a1 and a0) /* Element 13 (Aluminum): 27Al */
+                   or (not(a3) and a2 and a1 and not(a0)) /* Element 14 (Silicon): 28Si */
+                   or (a3 and a2 and not(a1) and not(a0)); /* Element 15 (Phosphorus): 31P */
+
+/* Test cases */
+/* Replace values of a3, a2, a1, a0 with binary inputs */
+a3 : false; a2 : false; a1 : false; a0 : true; /* Binary for Element 1 (Hydrogen) */
+print("1: ", stable_isotope);
+
+a3 : false; a2 : false; a1 : true; a0 : true; /* Binary for Element 2 (Helium) */
+print("2: ", stable_isotope);
+
+a3 : false; a2 : true; a1 : false; a0 : false; /* Binary for Element 3 (Lithium) */
+print("3: ", stable_isotope);
+
+a3 : false; a2 : true; a1 : false; a0 : true; /* Binary for Element 4 (Beryllium) */
+print("4: ", stable_isotope);
+
+a3 : false; a2 : true; a1 : true; a0 : true; /* Binary for Element 5 (Boron) */
+print("5: ", stable_isotope);
+
+a3 : true; a2 : false; a1 : false; a0 : false; /* Binary for Element 6 (Carbon) */
+print("6: ", stable_isotope);
+
+a3 : true; a2 : false; a1 : false; a0 : true; /* Binary for Element 7 (Nitrogen) */
+print("7: ", stable_isotope);
+
+a3 : true; a2 : false; a1 : true; a0 : false; /* Binary for Element 8 (Oxygen) */
+print("8: ", stable_isotope);
+
+a3 : true; a2 : false; a1 : true; a0 : true; /* Binary for Element 9 (Fluorine) */
+print("9: ", stable_isotope);
+
+a3 : true; a2 : true; a1 : false; a0 : false; /* Binary for Element 10 (Neon) */
+print("10: ", stable_isotope);
+
+a3 : true; a2 : true; a1 : false; a0 : true; /* Binary for Element 11 (Sodium) */
+print("11: ", stable_isotope);
+
+a3 : true; a2 : true; a1 : true; a0 : false; /* Binary for Element 12 (Magnesium) */
+print("12: ", stable_isotope);
+
+a3 : true; a2 : true; a1 : true; a0 : true; /* Binary for Element 13 (Aluminum) */
+print("13: ", stable_isotope);
+
+a3 : false; a2 : true; a1 : true; a0 : false; /* Binary for Element 14 (Silicon) */
+print("14: ", stable_isotope);
+
+a3 : true; a2 : true; a1 : false; a0 : false; /* Binary for Element 15 (Phosphorus) */
+print("15: ", stable_isotope);
